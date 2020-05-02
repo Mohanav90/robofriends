@@ -24,14 +24,11 @@ class App extends Component{
 		this.setState({searchfield: e.target.value});
 	}
 render(){
-	const {robots,searchfield} = this.state;
-	const filterrecords = robots.filter(robot =>{
-		return robot.name.toLowerCase().includes(searchfield.toLowerCase())
+	const filterrecords = this.state.robots.filter(robots =>{
+		return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
 	})
-	return !robot.length ?<h1>Loading..</h1> :
-
 	
-	(
+	return (
 
 		<div className="tc">
 		 <h1 >RoboFriends</h1>
@@ -44,5 +41,6 @@ render(){
 		);
 }
 }
+
 
 export default App;
